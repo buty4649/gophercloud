@@ -48,15 +48,15 @@ type DeleteResult struct {
 // AllocationPool represents a sub-range of cidr available for dynamic
 // allocation to ports, e.g. {Start: "10.0.0.2", End: "10.0.0.254"}
 type AllocationPool struct {
-	Start string `json:"start"`
-	End   string `json:"end"`
+	Start string `mapstructure:"start" json:"start"`
+	End   string `mapstructure:"end" json:"end"`
 }
 
 // HostRoute represents a route that should be used by devices with IPs from
 // a subnet (not including local subnet route).
 type HostRoute struct {
-	DestinationCIDR string `json:"destination"`
-	NextHop         string `json:"nexthop"`
+	DestinationCIDR string `mapstructure:"destination" json:"destination"`
+	NextHop         string `mapstructure:"nexthop" json:"nexthop"`
 }
 
 // Subnet represents a subnet. See package documentation for a top-level
